@@ -236,7 +236,7 @@ def main():
     dm = GLUEDataModule(
     model_name_or_path="distilbert-base-uncased",
     task_name="mrpc",
-    rain_batch_size=args_model.batch_size,
+    train_batch_size=args_model.batch_size,
     eval_batch_size=args_model.batch_size
     )
     dm.setup("fit")
@@ -251,11 +251,12 @@ def main():
 
     tensor_logger = TensorBoardLogger("logs/", name="GLUE")
     trainer = L.Trainer(
-        accelerator="auto",
-        devices=1,
-        default_root_dir=args_model.checkpoint_dir,
-        logger=tensor_logger,
-    )
+    accelerator="auto",
+    devices=1,
+    max_epochs=3,
+    default_root_dir=args_model.checkpoint_dir,
+    logger=tensor_logger,
+)
     trainer.fit(model, datamodule=dm)
 
 if __name__ == "__main__":

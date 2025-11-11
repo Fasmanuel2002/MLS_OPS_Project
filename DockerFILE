@@ -1,11 +1,6 @@
 FROM python:3.11-slim
-
 WORKDIR /app
-
 COPY . /app
-
 RUN pip install --no-cache-dir -r requirements.txt
-
 RUN mkdir -p models logs
-
-CMD ["python3.11", "main.py","--checkpoint_dir","--lr","1e-5" ,"--batch_size","32","--weight_decay", "0.0"]
+ENTRYPOINT ["python3.11", "main.py"]
