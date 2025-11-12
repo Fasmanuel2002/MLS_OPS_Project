@@ -1,0 +1,10 @@
+eval_batch_size: 32
+eval_splits:
+- validation
+learning_rate: 1.0e-05
+model_name_or_path: distilbert-base-uncased
+num_labels: 2
+task_name: mrpc
+train_batch_size: 32
+warmup_steps: 0
+weight_decay: 0.0
