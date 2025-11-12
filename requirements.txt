@@ -5,5 +5,7 @@ transformers
 datasets
 evaluate
 lightning
-tensorboard
+scikit-learn
+scipy
 argparse
+tensorboard
