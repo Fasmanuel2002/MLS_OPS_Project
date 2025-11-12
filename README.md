@@ -16,6 +16,7 @@ Use the docker image that is preconfigured for this project, you build it with "
 
 With this you create the Docker image and you can run it with this command docker "run -it --rm mlops_project" or 
 you can play with the hyperparameters choosing like this
+
 "
 docker run -it --rm mlops_project \
   --checkpoint_dir models \
@@ -23,6 +24,7 @@ docker run -it --rm mlops_project \
   --batch_size 32 \
   --weight_decay 0.0
   "
+  
 ## 💻 Option 2 – Run Locally
 If you prefer to run it directly on your system: "pip install -r requirements.txt"
 
